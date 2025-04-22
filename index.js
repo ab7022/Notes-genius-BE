@@ -8,7 +8,7 @@ app.use(express.json())
 // CORS: allow your Vercel app and localhost:3000
 app.use(cors({
   origin(origin, cb) {
-    if (!origin || ['https://note-genius-ai.vercel.app'].includes(origin)) {
+    if (!origin || ['https://note-genius-ai.vercel.app','http://localhost:3000'].includes(origin)) {
       return cb(null, true)
     }
     cb(new Error('Not allowed by CORS'))
